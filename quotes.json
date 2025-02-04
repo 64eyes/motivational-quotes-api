@@ -1,0 +1,702 @@
+[
+    {
+        "quote_id": "1",
+        "quote_text": "The only way to do great work is to love what you do. - Steve Jobs",
+        "author": "Steve Jobs",
+        "year": 2005,
+        "image_url": "https://link_to_image_1.jpg"
+    },
+    {
+        "quote_id": "2",
+        "quote_text": "It does not matter how slowly you go as long as you do not stop. - Confucius",
+        "author": "Confucius",
+        "year": 500,
+        "image_url": "https://link_to_image_2.jpg"
+    },
+    {
+        "quote_id": "3",
+        "quote_text": "Everything you can imagine is real. - Pablo Picasso",
+        "author": "Pablo Picasso",
+        "year": 1955,
+        "image_url": "https://link_to_image_3.jpg"
+    },
+    {
+        "quote_id": "4",
+        "quote_text": "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+        "author": "Franklin D. Roosevelt",
+        "year": 1945,
+        "image_url": "https://link_to_image_4.jpg"
+    },
+    {
+        "quote_id": "5",
+        "quote_text": "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "author": "Winston Churchill",
+        "year": 1940,
+        "image_url": "https://link_to_image_5.jpg"
+    },
+    {
+        "quote_id": "6",
+        "quote_text": "You must be the change you wish to see in the world. - Mahatma Gandhi",
+        "author": "Mahatma Gandhi",
+        "year": 1913,
+        "image_url": "https://link_to_image_6.jpg"
+    },
+    {
+        "quote_id": "7",
+        "quote_text": "It always seems impossible until it's done. - Nelson Mandela",
+        "author": "Nelson Mandela",
+        "year": 2000,
+        "image_url": "https://link_to_image_7.jpg"
+    },
+    {
+        "quote_id": "8",
+        "quote_text": "Hardships often prepare ordinary people for an extraordinary destiny. - C.S. Lewis",
+        "author": "C.S. Lewis",
+        "year": 1955,
+        "image_url": "https://link_to_image_8.jpg"
+    },
+    {
+        "quote_id": "9",
+        "quote_text": "The best way to predict the future is to create it. - Abraham Lincoln",
+        "author": "Abraham Lincoln",
+        "year": 1862,
+        "image_url": "https://link_to_image_9.jpg"
+    },
+    {
+        "quote_id": "10",
+        "quote_text": "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+        "author": "Jordan Belfort",
+        "year": 2007,
+        "image_url": "https://link_to_image_10.jpg"
+    },
+    {
+        "quote_id": "11",
+        "quote_text": "Opportunities don't happen, you create them. - Chris Grosser",
+        "author": "Chris Grosser",
+        "year": 2010,
+        "image_url": "https://link_to_image_11.jpg"
+    },
+    {
+        "quote_id": "12",
+        "quote_text": "Dream big and dare to fail. - Norman Vaughan",
+        "author": "Norman Vaughan",
+        "year": 1953,
+        "image_url": "https://link_to_image_12.jpg"
+    },
+    {
+        "quote_id": "13",
+        "quote_text": "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+        "author": "Eleanor Roosevelt",
+        "year": 1933,
+        "image_url": "https://link_to_image_13.jpg"
+    },
+    {
+        "quote_id": "14",
+        "quote_text": "It is never too late to be what you might have been. - George Eliot",
+        "author": "George Eliot",
+        "year": 1860,
+        "image_url": "https://link_to_image_14.jpg"
+    },
+    {
+        "quote_id": "15",
+        "quote_text": "Everything has beauty, but not everyone sees it. - Confucius",
+        "author": "Confucius",
+        "year": 450,
+        "image_url": "https://link_to_image_15.jpg"
+    },
+    {
+        "quote_id": "16",
+        "quote_text": "Believe you can and you're halfway there. - Theodore Roosevelt",
+        "author": "Theodore Roosevelt",
+        "year": 1900,
+        "image_url": "https://link_to_image_16.jpg"
+    },
+    {
+        "quote_id": "17",
+        "quote_text": "Success is not how high you have climbed, but how you make a positive difference to the world. - Roy T. Bennett",
+        "author": "Roy T. Bennett",
+        "year": 2016,
+        "image_url": "https://link_to_image_17.jpg"
+    },
+    {
+        "quote_id": "18",
+        "quote_text": "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+        "author": "C.S. Lewis",
+        "year": 1960,
+        "image_url": "https://link_to_image_18.jpg"
+    },
+    {
+        "quote_id": "19",
+        "quote_text": "Everything you’ve ever wanted is on the other squote_ide of fear. - George Addair",
+        "author": "George Addair",
+        "year": 1980,
+        "image_url": "https://link_to_image_19.jpg"
+    },
+    {
+        "quote_id": "20",
+        "quote_text": "Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats",
+        "author": "William Butler Yeats",
+        "year": 1900,
+        "image_url": "https://link_to_image_20.jpg"
+    },
+    {
+        "quote_id": "21",
+        "quote_text": "Success usually comes to those who are too busy to be looking for it. - Henry Davquote_id Thoreau",
+        "author": "Henry Davquote_id Thoreau",
+        "year": 1861,
+        "image_url": "https://link_to_image_21.jpg"
+    },
+    {
+        "quote_id": "22",
+        "quote_text": "What lies behind us and what lies before us are tiny matters compared to what lies within us. - Ralph Waldo Emerson",
+        "author": "Ralph Waldo Emerson",
+        "year": 1841,
+        "image_url": "https://link_to_image_22.jpg"
+    },
+    {
+        "quote_id": "23",
+        "quote_text": "The way to get started is to quit talking and begin doing. - Walt Disney",
+        "author": "Walt Disney",
+        "year": 1955,
+        "image_url": "https://link_to_image_23.jpg"
+    },
+    {
+        "quote_id": "24",
+        "quote_text": "In the mquote_iddle of difficulty lies opportunity. - Albert Einstein",
+        "author": "Albert Einstein",
+        "year": 1921,
+        "image_url": "https://link_to_image_24.jpg"
+    },
+    {
+        "quote_id": "25",
+        "quote_text": "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+        "author": "Sam Levenson",
+        "year": 1970,
+        "image_url": "https://link_to_image_25.jpg"
+    },
+    {
+        "quote_id": "26",
+        "quote_text": "The harder you work for something, the greater you'll feel when you achieve it. - Anonymous",
+        "author": "Anonymous",
+        "year": 2015,
+        "image_url": "https://link_to_image_26.jpg"
+    },
+    {
+        "quote_id": "27",
+        "quote_text": "Don't limit your challenges. Challenge your limits. - Anonymous",
+        "author": "Anonymous",
+        "year": 2018,
+        "image_url": "https://link_to_image_27.jpg"
+    },
+    {
+        "quote_id": "28",
+        "quote_text": "Success is the sum of small efforts, repeated day in and day out. - Robert Collier",
+        "author": "Robert Collier",
+        "year": 1950,
+        "image_url": "https://link_to_image_28.jpg"
+    },
+    {
+        "quote_id": "29",
+        "quote_text": "The only place where success comes before work is in the dictionary. - Vquote_idal Sassoon",
+        "author": "Vquote_idal Sassoon",
+        "year": 1975,
+        "image_url": "https://link_to_image_29.jpg"
+    },
+    {
+        "quote_id": "30",
+        "quote_text": "Do what you can with all you have, wherever you are. - Theodore Roosevelt",
+        "author": "Theodore Roosevelt",
+        "year": 1901,
+        "image_url": "https://link_to_image_30.jpg"
+    },
+    {
+        "quote_id": "31",
+        "quote_text": "The future depends on what you do today. - Mahatma Gandhi",
+        "author": "Mahatma Gandhi",
+        "year": 1910,
+        "image_url": "https://link_to_image_31.jpg"
+    },
+    {
+        "quote_id": "32",
+        "quote_text": "What you get by achieving your goals is not as important as what you become by achieving your goals. - Zig Ziglar",
+        "author": "Zig Ziglar",
+        "year": 1985,
+        "image_url": "https://link_to_image_32.jpg"
+    },
+    {
+        "quote_id": "33",
+        "quote_text": "You miss 100% of the shots you don’t take. - Wayne Gretzky",
+        "author": "Wayne Gretzky",
+        "year": 1980,
+        "image_url": "https://link_to_image_33.jpg"
+    },
+    {
+        "quote_id": "34",
+        "quote_text": "Everything you can do or dream you can, begin it. Boldness has genius, power and magic in it. - Johann Wolfgang von Goethe",
+        "author": "Johann Wolfgang von Goethe",
+        "year": 1832,
+        "image_url": "https://link_to_image_34.jpg"
+    },
+    {
+        "quote_id": "35",
+        "quote_text": "You don’t have to be great to start, but you have to start to be great. - Zig Ziglar",
+        "author": "Zig Ziglar",
+        "year": 1972,
+        "image_url": "https://link_to_image_35.jpg"
+    },
+    {
+        "quote_id": "36",
+        "quote_text": "Perseverance is not a long race; it is many short races one after the other. - Walter Elliot",
+        "author": "Walter Elliot",
+        "year": 1963,
+        "image_url": "https://link_to_image_36.jpg"
+    },
+    {
+        "quote_id": "37",
+        "quote_text": "Success is walking from failure to failure with no loss of enthusiasm. - Winston Churchill",
+        "author": "Winston Churchill",
+        "year": 1941,
+        "image_url": "https://link_to_image_37.jpg"
+    },
+    {
+        "quote_id": "38",
+        "quote_text": "The harder the battle, the sweeter the victory. - Les Brown",
+        "author": "Les Brown",
+        "year": 1980,
+        "image_url": "https://link_to_image_38.jpg"
+    },
+    {
+        "quote_id": "39",
+        "quote_text": "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+        "author": "Charles Kingsleigh",
+        "year": 2001,
+        "image_url": "https://link_to_image_39.jpg"
+    },
+    {
+        "quote_id": "40",
+        "quote_text": "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer",
+        "author": "Albert Schweitzer",
+        "year": 1923,
+        "image_url": "https://link_to_image_40.jpg"
+    },
+    {
+        "quote_id": "41",
+        "quote_text": "Don't be afraquote_id to give up the good to go for the great. - John D. Rockefeller",
+        "author": "John D. Rockefeller",
+        "year": 1900,
+        "image_url": "https://link_to_image_41.jpg"
+    },
+    {
+        "quote_id": "42",
+        "quote_text": "Success doesn't come from what you do occasionally, it comes from what you do consistently. - Marie Forleo",
+        "author": "Marie Forleo",
+        "year": 2015,
+        "image_url": "https://link_to_image_42.jpg"
+    },
+    {
+        "quote_id": "43",
+        "quote_text": "You are braver than you believe, stronger than you seem, and smarter than you think. - A.A. Milne",
+        "author": "A.A. Milne",
+        "year": 1926,
+        "image_url": "https://link_to_image_43.jpg"
+    },
+    {
+        "quote_id": "44",
+        "quote_text": "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+        "author": "Steve Jobs",
+        "year": 2005,
+        "image_url": "https://link_to_image_44.jpg"
+    },
+    {
+        "quote_id": "45",
+        "quote_text": "A person who never made a mistake never tried anything new. - Albert Einstein",
+        "author": "Albert Einstein",
+        "year": 1955,
+        "image_url": "https://link_to_image_45.jpg"
+    },
+    {
+        "quote_id": "46",
+        "quote_text": "Don't let yesterday take up too much of today. - Will Rogers",
+        "author": "Will Rogers",
+        "year": 1920,
+        "image_url": "https://link_to_image_46.jpg"
+    },
+    {
+        "quote_id": "47",
+        "quote_text": "Act as if what you do makes a difference. It does. - William James",
+        "author": "William James",
+        "year": 1900,
+        "image_url": "https://link_to_image_47.jpg"
+    },
+    {
+        "quote_id": "48",
+        "quote_text": "If you want to go fast, go alone. If you want to go far, go together. - African Proverb",
+        "author": "African Proverb",
+        "year": 2000,
+        "image_url": "https://link_to_image_48.jpg"
+    },
+    {
+        "quote_id": "49",
+        "quote_text": "Success is a journey, not a destination. - Ben Sweetland",
+        "author": "Ben Sweetland",
+        "year": 1975,
+        "image_url": "https://link_to_image_49.jpg"
+    },
+    {
+        "quote_id": "50",
+        "quote_text": "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
+        "author": "Thomas Jefferson",
+        "year": 1800,
+        "image_url": "https://link_to_image_50.jpg"
+    },
+    {
+        "quote_id": "51",
+        "quote_text": "What we achieve inwardly will change outer reality. - Plutarch",
+        "author": "Plutarch",
+        "year": 100,
+        "image_url": "https://link_to_image_51.jpg"
+    },
+    {
+        "quote_id": "52",
+        "quote_text": "A dream becomes a goal when action is taken toward its achievement. - Bo Bennett",
+        "author": "Bo Bennett",
+        "year": 2010,
+        "image_url": "https://link_to_image_52.jpg"
+    },
+    {
+        "quote_id": "53",
+        "quote_text": "To succeed in life, you need two things: ignorance and confquote_idence. - Mark Twain",
+        "author": "Mark Twain",
+        "year": 1870,
+        "image_url": "https://link_to_image_53.jpg"
+    },
+    {
+        "quote_id": "54",
+        "quote_text": "The road to success and the road to failure are almost exactly the same. - Colin R. Davis",
+        "author": "Colin R. Davis",
+        "year": 1980,
+        "image_url": "https://link_to_image_54.jpg"
+    },
+    {
+        "quote_id": "55",
+        "quote_text": "There are no shortcuts to any place worth going. - Beverly Sills",
+        "author": "Beverly Sills",
+        "year": 1990,
+        "image_url": "https://link_to_image_55.jpg"
+    },
+    {
+        "quote_id": "56",
+        "quote_text": "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change. - Charles Darwin",
+        "author": "Charles Darwin",
+        "year": 1859,
+        "image_url": "https://link_to_image_56.jpg"
+    },
+    {
+        "quote_id": "57",
+        "quote_text": "I can't change the direction of the wind, but I can adjust my sails to always reach my destination. - Jimmy Dean",
+        "author": "Jimmy Dean",
+        "year": 1960,
+        "image_url": "https://link_to_image_57.jpg"
+    },
+    {
+        "quote_id": "58",
+        "quote_text": "Success is not in what you have, but who you are. - Bo Bennett",
+        "author": "Bo Bennett",
+        "year": 2015,
+        "image_url": "https://link_to_image_58.jpg"
+    },
+    {
+        "quote_id": "59",
+        "quote_text": "Don't stop when you're tired. Stop when you're done. - Anonymous",
+        "author": "Anonymous",
+        "year": 2018,
+        "image_url": "https://link_to_image_59.jpg"
+    },
+    {
+        "quote_id": "60",
+        "quote_text": "Your limitation—it’s only your imagination. - Anonymous",
+        "author": "Anonymous",
+        "year": 2017,
+        "image_url": "https://link_to_image_60.jpg"
+    },
+    {
+        "quote_id": "61",
+        "quote_text": "Push yourself, because no one else is going to do it for you. - Anonymous",
+        "author": "Anonymous",
+        "year": 2015,
+        "image_url": "https://link_to_image_61.jpg"
+    },
+    {
+        "quote_id": "62",
+        "quote_text": "Sometimes we're tested not to show our weaknesses, but to discover our strengths. - Anonymous",
+        "author": "Anonymous",
+        "year": 2016,
+        "image_url": "https://link_to_image_62.jpg"
+    },
+    {
+        "quote_id": "63",
+        "quote_text": "The key to success is to focus on goals, not obstacles. - Anonymous",
+        "author": "Anonymous",
+        "year": 2018,
+        "image_url": "https://link_to_image_63.jpg"
+    },
+    {
+        "quote_id": "64",
+        "quote_text": "Dream it. Wish it. Do it. - Anonymous",
+        "author": "Anonymous",
+        "year": 2019,
+        "image_url": "https://link_to_image_64.jpg"
+    },
+    {
+        "quote_id": "65",
+        "quote_text": "Success doesn’t just find you. You have to go out and get it. - Anonymous",
+        "author": "Anonymous",
+        "year": 2020,
+        "image_url": "https://link_to_image_65.jpg"
+    },
+    {
+        "quote_id": "66",
+        "quote_text": "The harder you work for something, the greater you’ll feel when you achieve it. - Anonymous",
+        "author": "Anonymous",
+        "year": 2021,
+        "image_url": "https://link_to_image_66.jpg"
+    },
+    {
+        "quote_id": "67",
+        "quote_text": "Dream it. Believe it. Achieve it. - Anonymous",
+        "author": "Anonymous",
+        "year": 2020,
+        "image_url": "https://link_to_image_67.jpg"
+    },
+    {
+        "quote_id": "68",
+        "quote_text": "Success is what comes after you stop making excuses. - Anonymous",
+        "author": "Anonymous",
+        "year": 2017,
+        "image_url": "https://link_to_image_68.jpg"
+    },
+    {
+        "quote_id": "69",
+        "quote_text": "Believe in yourself and all that you are. Know that there is something insquote_ide you that is greater than any obstacle. - Christian D. Larson",
+        "author": "Christian D. Larson",
+        "year": 1912,
+        "image_url": "https://link_to_image_69.jpg"
+    },
+    {
+        "quote_id": "70",
+        "quote_text": "Your only limit is your mind. - Anonymous",
+        "author": "Anonymous",
+        "year": 2021,
+        "image_url": "https://link_to_image_70.jpg"
+    },
+    {
+        "quote_id": "71",
+        "quote_text": "Opportunities don’t happen, you create them. - Chris Grosser",
+        "author": "Chris Grosser",
+        "year": 2019,
+        "image_url": "https://link_to_image_71.jpg"
+    },
+    {
+        "quote_id": "72",
+        "quote_text": "Don’t wait for opportunity. Create it. - Anonymous",
+        "author": "Anonymous",
+        "year": 2018,
+        "image_url": "https://link_to_image_72.jpg"
+    },
+    {
+        "quote_id": "73",
+        "quote_text": "It’s going to be hard, but hard does not mean impossible. - Anonymous",
+        "author": "Anonymous",
+        "year": 2022,
+        "image_url": "https://link_to_image_73.jpg"
+    },
+    {
+        "quote_id": "74",
+        "quote_text": "Great things never come from comfort zones. - Anonymous",
+        "author": "Anonymous",
+        "year": 2019,
+        "image_url": "https://link_to_image_74.jpg"
+    },
+    {
+        "quote_id": "75",
+        "quote_text": "Dream bigger. Do bigger. - Anonymous",
+        "author": "Anonymous",
+        "year": 2020,
+        "image_url": "https://link_to_image_75.jpg"
+    },
+    {
+        "quote_id": "76",
+        "quote_text": "Little things make big days. - Anonymous",
+        "author": "Anonymous",
+        "year": 2021,
+        "image_url": "https://link_to_image_76.jpg"
+    },
+    {
+        "quote_id": "77",
+        "quote_text": "It’s never too late to be what you might have been. - George Eliot",
+        "author": "George Eliot",
+        "year": 1860,
+        "image_url": "https://link_to_image_77.jpg"
+    },
+    {
+        "quote_id": "78",
+        "quote_text": "A year from now you may wish you had started today. - Karen Lamb",
+        "author": "Karen Lamb",
+        "year": 2005,
+        "image_url": "https://link_to_image_78.jpg"
+    },
+    {
+        "quote_id": "79",
+        "quote_text": "The key to success is to focus on goals, not obstacles. - Anonymous",
+        "author": "Anonymous",
+        "year": 2021,
+        "image_url": "https://link_to_image_79.jpg"
+    },
+    {
+        "quote_id": "80",
+        "quote_text": "It’s not whether you get knocked down, it’s whether you get up. - Vince Lombardi",
+        "author": "Vince Lombardi",
+        "year": 1960,
+        "image_url": "https://link_to_image_80.jpg"
+    },
+    {
+        "quote_id": "81",
+        "quote_text": "Don’t be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett",
+        "author": "Roy T. Bennett",
+        "year": 2015,
+        "image_url": "https://link_to_image_81.jpg"
+    },
+    {
+        "quote_id": "82",
+        "quote_text": "Doubt kills more dreams than failure ever will. - Suzy Kassem",
+        "author": "Suzy Kassem",
+        "year": 2010,
+        "image_url": "https://link_to_image_82.jpg"
+    },
+    {
+        "quote_id": "83",
+        "quote_text": "The struggle you’re in today is developing the strength you need for tomorrow. - Robert Tew",
+        "author": "Robert Tew",
+        "year": 2018,
+        "image_url": "https://link_to_image_83.jpg"
+    },
+    {
+        "quote_id": "84",
+        "quote_text": "You don’t have to be great to start, but you have to start to be great. - Zig Ziglar",
+        "author": "Zig Ziglar",
+        "year": 1975,
+        "image_url": "https://link_to_image_84.jpg"
+    },
+    {
+        "quote_id": "85",
+        "quote_text": "Go the extra mile. It’s never crowded. - Wayne Dyer",
+        "author": "Wayne Dyer",
+        "year": 2005,
+        "image_url": "https://link_to_image_85.jpg"
+    },
+    {
+        "quote_id": "86",
+        "quote_text": "It does not matter how slowly you go as long as you do not stop. - Confucius",
+        "author": "Confucius",
+        "year": 500,
+        "image_url": "https://link_to_image_86.jpg"
+    },
+    {
+        "quote_id": "87",
+        "quote_text": "You are stronger than you think. - Anonymous",
+        "author": "Anonymous",
+        "year": 2020,
+        "image_url": "https://link_to_image_87.jpg"
+    },
+    {
+        "quote_id": "88",
+        "quote_text": "Your life does not get better by chance, it gets better by change. - Jim Rohn",
+        "author": "Jim Rohn",
+        "year": 1985,
+        "image_url": "https://link_to_image_88.jpg"
+    },
+    {
+        "quote_id": "89",
+        "quote_text": "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+        "author": "Franklin D. Roosevelt",
+        "year": 1945,
+        "image_url": "https://link_to_image_89.jpg"
+    },
+    {
+        "quote_id": "90",
+        "quote_text": "Great things never come from comfort zones. - Anonymous",
+        "author": "Anonymous",
+        "year": 2021,
+        "image_url": "https://link_to_image_90.jpg"
+    },
+    {
+        "quote_id": "91",
+        "quote_text": "If you want to achieve greatness stop asking for permission. - Anonymous",
+        "author": "Anonymous",
+        "year": 2022,
+        "image_url": "https://link_to_image_91.jpg"
+    },
+    {
+        "quote_id": "92",
+        "quote_text": "Nothing will work unless you do. - Maya Angelou",
+        "author": "Maya Angelou",
+        "year": 1990,
+        "image_url": "https://link_to_image_92.jpg"
+    },
+    {
+        "quote_id": "93",
+        "quote_text": "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+        "author": "Charles Kingsleigh",
+        "year": 2001,
+        "image_url": "https://link_to_image_93.jpg"
+    },
+    {
+        "quote_id": "94",
+        "quote_text": "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+        "author": "Franklin D. Roosevelt",
+        "year": 1945,
+        "image_url": "https://link_to_image_94.jpg"
+    },
+    {
+        "quote_id": "95",
+        "quote_text": "In the mquote_iddle of every difficulty lies opportunity. - Albert Einstein",
+        "author": "Albert Einstein",
+        "year": 1940,
+        "image_url": "https://link_to_image_95.jpg"
+    },
+    {
+        "quote_id": "96",
+        "quote_text": "The best way to predict the future is to create it. - Peter Drucker",
+        "author": "Peter Drucker",
+        "year": 1954,
+        "image_url": "https://link_to_image_96.jpg"
+    },
+    {
+        "quote_id": "97",
+        "quote_text": "You miss 100% of the shots you don’t take. - Wayne Gretzky",
+        "author": "Wayne Gretzky",
+        "year": 1983,
+        "image_url": "https://link_to_image_97.jpg"
+    },
+    {
+        "quote_id": "98",
+        "quote_text": "Everything you’ve ever wanted is on the other squote_ide of fear. - George Addair",
+        "author": "George Addair",
+        "year": 1980,
+        "image_url": "https://link_to_image_98.jpg"
+    },
+    {
+        "quote_id": "99",
+        "quote_text": "Opportunities don't happen, you create them. - Chris Grosser",
+        "author": "Chris Grosser",
+        "year": 2010,
+        "image_url": "https://link_to_image_99.jpg"
+    },
+    {
+        "quote_id": "100",
+        "quote_text": "Do one thing every day that scares you. - Eleanor Roosevelt",
+        "author": "Eleanor Roosevelt",
+        "year": 1960,
+        "image_url": "https://link_to_image_100.jpg"
+    }
+]

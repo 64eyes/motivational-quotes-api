@@ -1,0 +1,107 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: 64eyes
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: motivational-quotes-api
+
+provider:
+  name: aws
+  runtime: python3.12
+  region: us-east-1
+  environment:
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:Scan
+      - dynamodb:GetItem
+      - s3:GetObject
+      - s3:ListBucket
+    Resource: "*"
+
+resources:
+  Resources:
+    MotivationalQuotesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: MotivationalQuotes
+        AttributeDefinitions:
+          - AttributeName: quote_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: quote_id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+
+functions:
+  getQuotes:
+    handler: handler.get_motivational_quotes
+    events:
+      - http:
+          path: quotes
+          method: get
+
+  getQuotesByYear:
+    handler: handler.get_motivational_quotes_by_year
+    events:
+      - http:
+          path: quotes/{year}
+          method: get
+
+  generateQuoteExplanation:
+    handler: handler.generate_quote_explanation
+    events:
+      - http:
+          path: quotes/explanation
+          method: post
+  searchQuotes:
+    handler: handler.search_quotes
+    events:
+      - http:
+          path: quotes/search
+          method: get
+          request:
+            parameters:
+              querystrings:
+                keyword: true
+
+  filterQuotesByCategory:
+    handler: handler.filter_quotes_by_category
+    events:
+      - http:
+          path: quotes/filter
+          method: get
+          request:
+            parameters:
+              querystrings:
+                category: true
+  filterQuotesByAuthor:
+    handler: handler.filter_quotes_by_author
+    events:
+      - http:
+          path: quotes/author
+          method: get
+          request:
+            parameters:
+              querystrings:
+                author: true
+
+  filterQuotesByYear:
+    handler: handler.filter_quotes_by_year
+    events:
+      - http:
+          path: quotes/year
+          method: get
+          request:
+            parameters:
+              querystrings:
+                year: true
+                             
+plugins:
+  - serverless-python-requirements
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
