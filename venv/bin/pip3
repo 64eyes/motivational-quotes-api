@@ -1,4 +1,4 @@
-#!/home/oloruntobi/l2c/motivational-quotes-api/motivational-quotes-api/venv/bin/python3
+#!/home/oloruntobi/l2c/motivational-quotes-api/motivational-quotes-api/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
