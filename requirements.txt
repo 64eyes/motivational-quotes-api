@@ -1,1 +1,3 @@
 openai
+Flask
+faiss-cpu

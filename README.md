@@ -1,202 +1,246 @@
 # Motivational Quotes API
 
-A **serverless API** that serves motivational quotes and provides functionalities such as retrieving all quotes, filtering and searching by parameters (author, year, category, etc.), and generating AI-powered explanations for quotes using OpenAI’s GPT models. This API is built using **AWS Lambda**, **API Gateway**, and **DynamoDB**, and is deployed using the **Serverless Framework**.
+A **cloud-native, AI-powered, serverless API** for motivational quotes. Features include adding/searching quotes, semantic search, personalized recommendations, user favorites/history, and more. Built with AWS Lambda, API Gateway, DynamoDB, OpenAI, FAISS, Flask, and Cognito. Deployable via the Serverless Framework.
+
+---
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
 - [Architecture](#architecture)
+- [Features](#features)
 - [Endpoints](#endpoints)
+- [Authentication (Cognito)](#authentication-cognito)
 - [Installation](#installation)
 - [Deployment](#deployment)
-- [Usage](#usage)
-- [Development](#development)
+- [Usage & Examples](#usage--examples)
+- [FAISS Microservice](#faiss-microservice)
+- [Testing](#testing)
 - [Future Enhancements](#future-enhancements)
 - [License](#license)
 
+---
+
 ## Overview
 
-The Motivational Quotes API provides a scalable and accessible way to deliver daily motivational quotes. It supports filtering, searching, and generating AI-powered explanations for quotes. The API is intended to be used as a backend service for mobile apps, websites, or any application that requires daily inspirational content.
+This API delivers daily motivational quotes, supports semantic search and AI-powered recommendations, and enables user-specific features like favorites and history. It is designed for mobile/web apps or any service needing inspirational content with modern AI capabilities.
 
-## Features
-
-- **Retrieve Quotes:** Fetch all motivational quotes from a DynamoDB table.
-- **Filter & Search:** Filter quotes by year, author, or category, and search by keywords.
-- **AI Explanations:** Generate human-like explanations for quotes using OpenAI's GPT models.
-- **Serverless Architecture:** Built using AWS Lambda and API Gateway for a scalable and cost-effective solution.
-- **Easy Deployment:** Managed via the Serverless Framework for rapid deployment and updates.
+---
 
 ## Architecture
 
-- **AWS Lambda:** Hosts Python functions that implement your API endpoints.
-- **API Gateway:** Exposes your Lambda functions as HTTP endpoints.
-- **DynamoDB:** Stores motivational quotes with fields such as `quote_id`, `quote_text`, `author`, `year`, and optionally `category`.
-- **OpenAI API:** Powers the AI explanation functionality.
-- **Serverless Framework:** Handles the packaging, deployment, and management of the API and its resources.
+- **AWS Lambda + API Gateway:** Serverless REST API endpoints
+- **DynamoDB:** NoSQL storage for quotes, favorites, and history
+- **OpenAI API:** Embedding and personalization
+- **FAISS (Flask Microservice on EC2):** Semantic vector search
+- **Amazon Cognito:** User authentication (JWT)
+- **Serverless Framework:** Deployment automation
+
+---
+
+## Features
+
+- Add new motivational quotes (single or batch)
+- Semantic search using natural language (OpenAI + FAISS)
+- Personalized quote recommendations
+- User favorites and history tracking
+- AI-powered quote explanations
+- Secure endpoints with Cognito authentication
+- Scalable, serverless, and cloud-native
+
+---
 
 ## Endpoints
 
-The deployed API provides the following endpoints:
+### **Quotes**
 
-- **GET `/quotes`**  
-  Retrieves all motivational quotes.
+- `POST /quotes` — Add a new quote (auth required)
+- `POST /quotes/batch` — Batch upload quotes (auth required)
+- `GET /quotes` — Retrieve all quotes
+- `GET /quotes/{year}` — Retrieve quotes by year
+- `GET /quotes/search?keyword=...` — Keyword search
+- `POST /quotes/search` — Semantic search (auth required)
+- `POST /quotes/explanation` — AI explanation for a quote
 
-- **GET `/quotes/{year}`**  
-  Retrieves quotes for a specified year.  
-  *Path Parameter:* `year`
+### **Personalization**
 
-- **POST `/quotes/explanation`**  
-  Generates an AI-powered explanation for a given quote.  
-  **Request Body (JSON):**
-  ```json
-  {
-    "quote_id": "1"
-  }
-GET /quotes/search
-Searches quotes based on a keyword.
-Query Parameter: ?keyword=your_keyword
+- `POST /quotes/recommend` — Personalized recommendations (auth required)
 
-GET /quotes/filter
-Filters quotes by category.
-Query Parameter: ?category=your_category
+### **Favorites**
 
-GET /quotes/author
-Filters quotes by author.
-Query Parameter: ?author=author_name
+- `POST /quotes/{id}/favorite` — Add to favorites (auth required)
+- `DELETE /quotes/{id}/favorite` — Remove from favorites (auth required)
+- `GET /user/favorites` — List user favorites (auth required)
 
-GET /quotes/year
-Filters quotes by year (alternative method using a query parameter).
-Query Parameter: ?year=YYYY
+### **History**
 
-Installation
-Prerequisites
-Python 3.8 or higher
-AWS CLI configured with your AWS credentials
-Node.js (required by the Serverless Framework)
-Serverless Framework installed globally
-Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/64eyes/motivational-quotes-api.git
+- `POST /quotes/{id}/viewed` — Add to user history (auth required)
+- `GET /user/history` — List user history (auth required)
+
+---
+
+## Authentication (Cognito)
+
+Most endpoints require a valid **JWT** from Amazon Cognito.
+
+### **Setup**
+
+1. Create a Cognito User Pool and App Client (no secret).
+2. Note your User Pool ID, App Client ID, and Pool ARN.
+3. Update `serverless.yml` with your Cognito Pool ARN.
+
+### **Getting a JWT**
+
+- Sign up/sign in via Cognito Hosted UI or AWS CLI/SDK.
+- Use the returned `id_token` or `access_token` as your Bearer token.
+
+### **Example (with curl):**
+
+```bash
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes \
+  -H "Authorization: Bearer <JWT>" \
+  -H "Content-Type: application/json" \
+  -d '{"quote_text": "Stay positive!", "author": "AI", "year": 2024}'
+```
+
+---
+
+## Installation
+
+**Prerequisites:**
+
+- Python 3.8+
+- Node.js (for Serverless Framework)
+- AWS CLI configured
+- OpenAI API key
+
+**Setup:**
+
+```bash
+# Clone and enter project
+git clone <repo-url>
 cd motivational-quotes-api
-Set Up Python Virtual Environment
-bash
-Copy
-Edit
-python3 -m venv venv
-source venv/bin/activate  # For Windows use: venv\Scripts\activate
-Install Python Dependencies
-If you have a requirements.txt:
 
-bash
-Copy
-Edit
+# Python venv
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install dependencies
 pip install -r requirements.txt
-If you don't, generate one from your current environment:
+npm install
+```
 
-bash
-Copy
-Edit
-pip freeze > requirements.txt
-Deployment
-This project is deployed using the Serverless Framework.
+---
 
-Configure Environment Variables
-In your serverless.yml, add your environment variables. For example:
+## Deployment
 
-yaml
-Copy
-Edit
-provider:
-  name: aws
-  runtime: python3.12
-  region: us-east-1
-  environment:
-    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
-Ensure that you have the OPENAI_API_KEY set in your local environment before deploying:
+1. **Set environment variables:**
+   - `OPENAI_API_KEY` (required)
+   - `FAISS_SERVICE_URL` (default: http://localhost:5000)
+2. **Update Cognito ARN in `serverless.yml`.**
+3. **Deploy:**
 
-bash
-Copy
-Edit
-export OPENAI_API_KEY="your_openai_api_key_here"
-Deploy the Service
-Run the following command from the root of your project:
-
-bash
-Copy
-Edit
+```bash
 serverless deploy
-After deployment, the command line output will include your live API endpoints.
+```
 
-Usage
-You can test your API endpoints using tools like Postman or curl.
+4. **Deploy FAISS microservice:**
+   - See [FAISS Microservice](#faiss-microservice) below.
 
-Examples
-Retrieve All Quotes:
+---
 
-bash
-Copy
-Edit
-curl -X GET https://<your-api-id>.execute-api.us-east-1.amazonaws.com/dev/quotes
-Filter by Author:
+## Usage & Examples
 
-bash
-Copy
-Edit
-curl -X GET "https://<your-api-id>.execute-api.us-east-1.amazonaws.com/dev/quotes/author?author=Einstein"
-Filter by Year:
+### **Add a Quote**
 
-bash
-Copy
-Edit
-curl -X GET "https://<your-api-id>.execute-api.us-east-1.amazonaws.com/dev/quotes/year?year=2020"
-Search by Keyword:
+```bash
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes \
+  -H "Authorization: Bearer <JWT>" \
+  -H "Content-Type: application/json" \
+  -d '{"quote_text": "Stay positive!", "author": "AI", "year": 2024}'
+```
 
-bash
-Copy
-Edit
-curl -X GET "https://<your-api-id>.execute-api.us-east-1.amazonaws.com/dev/quotes/search?keyword=inspire"
-Generate Quote Explanation:
+### **Batch Upload**
 
-bash
-Copy
-Edit
-curl -X POST https://<your-api-id>.execute-api.us-east-1.amazonaws.com/dev/quotes/explanation \
-     -H "Content-Type: application/json" \
-     -d '{"quote_id": "1"}'
-Replace <your-api-id> with the actual API Gateway ID provided upon deployment.
+```bash
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes/batch \
+  -H "Authorization: Bearer <JWT>" \
+  -H "Content-Type: application/json" \
+  -d '{"quotes": [{"quote_text": "A", "author": "B", "year": 2020}, ...]}'
+```
 
-Development
-Local Testing
-Invoke Functions Locally:
+### **Semantic Search**
 
-bash
-Copy
-Edit
-serverless invoke local --function getQuotes
-View Logs:
+```bash
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes/search \
+  -H "Authorization: Bearer <JWT>" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "overcoming failure"}'
+```
 
-bash
-Copy
-Edit
-serverless logs -f getQuotes --tail
-Version Control
-Make sure to commit your changes and push to GitHub:
+### **Personalized Recommendations**
 
-bash
-Copy
-Edit
-git add .
-git commit -m "Initial commit - Motivational Quotes API"
-git push origin main
-Future Enhancements
-User Authentication: Add endpoints for user registration and login.
-Daily Quote Notifications: Implement scheduled notifications via email or SMS.
-Advanced Filtering: Enhance filtering options and support complex queries.
-Analytics: Track API usage and identify popular quotes.
-CI/CD Pipeline: Set up GitHub Actions for continuous integration and automated deployments.
-Additional Features: Explore quote submissions, social sharing, and personalization.
-License
+```bash
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes/recommend \
+  -H "Authorization: Bearer <JWT>" \
+  -H "Content-Type: application/json" \
+  -d '{"profile": "I like quotes about resilience and growth."}'
+```
+
+### **Favorites**
+
+```bash
+# Add to favorites
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes/<id>/favorite -H "Authorization: Bearer <JWT>"
+# Remove from favorites
+curl -X DELETE https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes/<id>/favorite -H "Authorization: Bearer <JWT>"
+# List favorites
+curl -X GET https://<api-id>.execute-api.<region>.amazonaws.com/dev/user/favorites -H "Authorization: Bearer <JWT>"
+```
+
+### **History**
+
+```bash
+# Add to history
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/dev/quotes/<id>/viewed -H "Authorization: Bearer <JWT>"
+# List history
+curl -X GET https://<api-id>.execute-api.<region>.amazonaws.com/dev/user/history -H "Authorization: Bearer <JWT>"
+```
+
+---
+
+## FAISS Microservice
+
+- **Location:** `faiss_service/app.py`
+- **Purpose:** Stores and searches OpenAI embeddings for semantic search and recommendations.
+- **Endpoints:**
+  - `POST /add_embedding` — Add/update quote embedding
+  - `POST /search` — Semantic search
+- **Deployment:**
+  - Deploy on EC2 or any server with Python, Flask, and FAISS installed.
+  - Set `FAISS_SERVICE_URL` in Lambda environment to point to this service.
+
+---
+
+## Testing
+
+- Use Postman or curl for endpoint testing (see above examples).
+- Ensure you include a valid Cognito JWT for protected endpoints.
+- Check CloudWatch logs for Lambda debugging.
+- Test FAISS microservice independently with sample embeddings if needed.
+
+---
+
+## Future Enhancements
+
+- Scheduled "Quote of the Day" notifications (email/SMS)
+- Admin/moderation tools
+- Analytics and usage dashboards
+- CI/CD pipeline
+- API documentation (OpenAPI/Swagger)
+
+---
+
+## License
+
 This project is licensed under the MIT License.

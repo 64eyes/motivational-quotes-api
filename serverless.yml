@@ -10,13 +10,13 @@ provider:
   environment:
     OPENAI_API_KEY: ${env:OPENAI_API_KEY}
   iamRoleStatements:
-  - Effect: Allow
-    Action:
-      - dynamodb:Scan
-      - dynamodb:GetItem
-      - s3:GetObject
-      - s3:ListBucket
-    Resource: "*"
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - s3:GetObject
+        - s3:ListBucket
+      Resource: "*"
 
 resources:
   Resources:
@@ -33,6 +33,50 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 5
           WriteCapacityUnits: 5
+    FavoritesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: FavoritesTable
+        AttributeDefinitions:
+          - AttributeName: user_id
+            AttributeType: S
+          - AttributeName: quote_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: user_id
+            KeyType: HASH
+          - AttributeName: quote_id
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+    HistoryTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: HistoryTable
+        AttributeDefinitions:
+          - AttributeName: user_id
+            AttributeType: S
+          - AttributeName: timestamp
+            AttributeType: S
+        KeySchema:
+          - AttributeName: user_id
+            KeyType: HASH
+          - AttributeName: timestamp
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+    ApiGatewayAuthorizer:
+      Type: AWS::ApiGateway::Authorizer
+      Properties:
+        Name: CognitoAuthorizer
+        Type: COGNITO_USER_POOLS
+        IdentitySource: method.request.header.Authorization
+        RestApiId:
+          Ref: ApiGatewayRestApi
+        ProviderARNs:
+          - arn:aws:cognito-idp:REGION:ACCOUNT_ID:userpool/USER_POOL_ID
 
 functions:
   getQuotes:
@@ -97,7 +141,106 @@ functions:
             parameters:
               querystrings:
                 year: true
-                             
+
+  addQuote:
+    handler: handler.add_quote
+    events:
+      - http:
+          path: quotes
+          method: post
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  semanticSearch:
+    handler: handler.semantic_search
+    events:
+      - http:
+          path: quotes/search
+          method: post
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  personalizedRecommendations:
+    handler: handler.personalized_recommendations
+    events:
+      - http:
+          path: quotes/recommend
+          method: post
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  batchUploadQuotes:
+    handler: handler.batch_upload_quotes
+    events:
+      - http:
+          path: quotes/batch
+          method: post
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  favoriteQuote:
+    handler: handler.favorite_quote
+    events:
+      - http:
+          path: quotes/{id}/favorite
+          method: post
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  unfavoriteQuote:
+    handler: handler.unfavorite_quote
+    events:
+      - http:
+          path: quotes/{id}/favorite
+          method: delete
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  getFavorites:
+    handler: handler.get_favorites
+    events:
+      - http:
+          path: user/favorites
+          method: get
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  addToHistory:
+    handler: handler.add_to_history
+    events:
+      - http:
+          path: quotes/{id}/viewed
+          method: post
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
+  getHistory:
+    handler: handler.get_history
+    events:
+      - http:
+          path: user/history
+          method: get
+          authorizer:
+            type: COGNITO_USER_POOLS
+            authorizerId:
+              Ref: ApiGatewayAuthorizer
+
 plugins:
   - serverless-python-requirements
 
